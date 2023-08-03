@@ -8,6 +8,7 @@ import ErrorModal from '../UI/ErrorModal';
 
 const UserForm = (props) => {
 
+    // State Management
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -35,7 +36,7 @@ const UserForm = (props) => {
     const [isValid, setIsValid] = useState(false);
     const [modalError, setModalError] = useState();
     
-
+    // Function to handle the input change and store the user input
     const handleChange = (event) => {
         const {name, value} = event.target;
         switch(name) {
@@ -86,6 +87,7 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to validate the name field
     const handleNameValidation = (event) => {
         if (event.target.value.trim().length === 0) {
             setErrors({
@@ -112,6 +114,7 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to validate the username field
     const handleUsernameValidation = (event) => {
         if (event.target.value.trim().length === 0) {
             setErrors({
@@ -138,6 +141,7 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to validate the email ID
     const handleEmailValidation = (event) => {
         const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
         if (event.target.value.trim().length === 0) {
@@ -176,6 +180,7 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to validate the city field
     const handleCityValidation = (event) => {
         if (event.target.value.trim().length === 0) {
             setErrors({
@@ -202,6 +207,7 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to validate the zipcode field
     const handleZipcodeValidation = (event) => {
         if (event.target.value.trim().length === 0) {
             setErrors({
@@ -228,6 +234,7 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to validate the phone field
     const handlePhoneValidation = (event) => {
         const regex = /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i;
         if (event.target.value.trim().length === 0) {
@@ -266,6 +273,7 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to validate the website field
     const handleWebsiteValidation = (event) => {
         if (event.target.value.trim().length === 0) {
             setErrors({
@@ -291,6 +299,7 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to validate the company name field
     const handleCompanyNameValidation = (event) => {
         if (event.target.value.trim().length === 0) {
             setErrors({
@@ -317,10 +326,14 @@ const UserForm = (props) => {
         }
     }
 
+    // Function to handle the data submission
     const handleSubmit = (event) => {
         event.preventDefault()
         
+        // If any of the fields is not empty, then submit the data
         if (name !== '' && username !== '' && email !== '' && zipcode !== '' && phone !== '' && city !== '' && companyName !== '' && website !== '') {
+            
+            // Get the array of objects from local storage
             let usersData = localStorage.getItem("usersData");
             usersData = JSON.parse(usersData);
             usersData.push(
@@ -347,6 +360,8 @@ const UserForm = (props) => {
                     }
                 }
             )
+
+            // Save the updated array in the localstorage
             localStorage.setItem("usersData", JSON.stringify(usersData));
             
             setIsValid(true);
