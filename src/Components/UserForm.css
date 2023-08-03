@@ -1,0 +1,54 @@
+
+
+.UserForm {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.labelDiv, .errorDiv {
+    text-align: left;
+    width: 70%;
+    margin: auto;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.fullInput {
+    width: 500px;
+}
+
+.fullButton {
+    width: 530px;
+}
+
+.halfInput {
+    width: 230px;
+}
+
+.UserForm__address, .UserForm__catchphrase_bs {
+    display: inline-flex;
+}
+
+.inputError {
+    border-bottom: 2px solid rgb(222, 2, 2);
+}
+
+.cancelBtn {
+    color: white;
+    border: 1px solid white;
+    background-color: red;
+}
+
+.cancelBtn:hover {
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+}

@@ -1,0 +1,12 @@
+.Input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid darkslateblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+input:focus {
+    outline: none;
+}
