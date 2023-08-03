@@ -1,0 +1,17 @@
+.Button {
+    padding: 10px;
+    background-color: darkslateblue;
+    border: 1px solid white;
+    font-size: 17px;
+    color: white;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.Button:hover {
+    color: darkslateblue;
+    background-color: white;
+    border: 1px solid darkslateblue;
+}
